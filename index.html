@@ -45,7 +45,7 @@
 <header>
   <div class="inner">
     <h1>Driveline Tire &mdash; プライバシーポリシー / Privacy Policy</h1>
-    <div class="sub">最終更新 / Last updated: 2026-09-15</div>
+    <div class="sub">最終更新 / Last updated: 2026-10-17</div>
   </div>
 </header>
 
@@ -62,8 +62,10 @@ Driveline Tire（以下「本アプリ」）は、G-Works が提供する Window
 </p>
 
 <div class="note">
-<strong>本アプリはインターネット通信を一切行いません。</strong>
-利用者の情報を収集・送信することはなく、外部のサーバーへ接続することもありません。
+<strong>本アプリは利用者の情報を収集・送信しません。</strong>
+Microsoft Store 版はインターネット通信を一切行いません。
+ポータブル版・MSI 版は、利用者が「更新を確認」を選んだとき（または「起動時に更新を確認する」を有効にしたとき）だけ、
+新しい版があるかを GitHub に問い合わせます（4. を参照）。
 </div>
 
 <h3>1. 収集する情報</h3>
@@ -79,7 +81,8 @@ Driveline Tire（以下「本アプリ」）は、G-Works が提供する Window
 <p>本アプリが端末内に書き込むのは、次のものだけです。いずれも利用者の端末から外へ出ません。</p>
 <ul>
   <li><strong>プロファイルと設定</strong>
-      （利用者が名前を付けて保存した入力値、表示言語、表示単位、終了時の入力値、ウィンドウの位置と大きさ）。
+      （利用者が名前を付けて保存した入力値、表示言語、表示単位、終了時の入力値、ウィンドウの位置と大きさ、
+      入力したタイヤサイズの履歴、起動時に更新を確認するかどうか）。
       <code>%LOCALAPPDATA%\DrivelineTire\profiles.json</code> に保存します。</li>
   <li><strong>利用者が保存を指示したファイル</strong>（結果の表の CSV、画像の PNG）。保存先は利用者が選びます。</li>
   <li><strong>クリップボード</strong>。［表をコピー］を押したときだけ、結果の表の文字をクリップボードに入れます。</li>
@@ -94,14 +97,25 @@ Driveline Tire（以下「本アプリ」）は、G-Works が提供する Window
 
 <h3>4. ネットワーク・オンラインサービス</h3>
 <p>
-本アプリはネットワーク通信機能を持ちません。パッケージが要求する機能も
+<strong>Microsoft Store 版</strong>は通信を行いません。更新は Store が行います。パッケージが要求する機能も
 <code>runFullTrust</code>（Win32 デスクトップ アプリに必須）のみです。
+</p>
+<p>
+<strong>ポータブル版・MSI 版</strong>（GitHub で配布するもの）は、利用者がメニューの「更新を確認…」を選んだとき、
+または「起動時に更新を確認する」を有効にしたとき（初めは無効）だけ、
+<code>api.github.com</code>（GitHub, Inc. のサービス）に最新版の情報を問い合わせます。
+送るのは通常の Web 閲覧と同じ情報（IP アドレス、アプリ名と版を含む User-Agent）だけで、
+入力したデータ・プロファイル・端末の情報は送りません。GitHub での扱いは
+<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub のプライバシー ステートメント</a>に従います。
+新しい版があっても自動でダウンロード・インストールはしません。
+</p>
+<p>
 ヘルプはアプリに同梱したファイルをブラウザーで開くもので、通信は行いません。
 メニューの「プライバシー ポリシー」を選んだときだけ、利用者のブラウザーが本ページを開きます。
 </p>
 
 <h3>5. 第三者への提供</h3>
-<p>提供する情報がないため、第三者への提供もありません。</p>
+<p>提供する情報がないため、第三者への提供もありません（4. の更新の確認で GitHub が受け取る通常の通信情報を除きます）。</p>
 
 <h3>6. データの保存期間と削除</h3>
 <p>
@@ -113,7 +127,7 @@ Driveline Tire（以下「本アプリ」）は、G-Works が提供する Window
 
 <h3>7. セキュリティ</h3>
 <p>
-本アプリは情報を送信しないため、通信経路上の漏えいは発生しません。
+本アプリは利用者の情報を送信しません。更新の確認は HTTPS で行います。
 端末内のファイルの保護は、Windows のアクセス権と利用者の管理に依ります。
 </p>
 
@@ -144,9 +158,10 @@ This policy explains how the App handles your information.
 </p>
 
 <div class="note">
-<strong>The App makes no network connections at all.</strong>
-It does not collect or transmit any information about you, and it never contacts
-an external server.
+<strong>The App does not collect or transmit any information about you.</strong>
+The Microsoft Store edition makes no network connections at all.
+The portable and MSI editions contact GitHub only when you choose "Check for updates"
+(or turn on "Check for updates at startup"), to see whether a newer version exists (see section 4).
 </div>
 
 <h3>1. Information we collect</h3>
@@ -162,8 +177,8 @@ an external server.
 <p>The App writes only the following, and none of it leaves your device.</p>
 <ul>
   <li><strong>Profiles and settings</strong> (the inputs you save under a name, the
-      interface language, the display units, your inputs when the App closes, and the window
-      position and size), at
+      interface language, the display units, your inputs when the App closes, the window
+      position and size, your recent tire sizes, and whether to check for updates at startup), at
       <code>%LOCALAPPDATA%\DrivelineTire\profiles.json</code>.</li>
   <li><strong>Files you ask it to save</strong> (result tables as CSV, images as PNG).
       You choose where they go.</li>
@@ -180,14 +195,26 @@ contains no vehicle database.
 
 <h3>4. Network and online services</h3>
 <p>
-The App has no networking features. The only capability the package declares is
-<code>runFullTrust</code>, which is required for Win32 desktop applications.
+<strong>The Microsoft Store edition</strong> makes no network connections; the Store handles updates.
+The only capability the package declares is <code>runFullTrust</code>, which is required for Win32
+desktop applications.
+</p>
+<p>
+<strong>The portable and MSI editions</strong> (distributed on GitHub) ask <code>api.github.com</code>
+(a service of GitHub, Inc.) for the latest version only when you choose "Check for updates…" from the
+menu, or when you turn on "Check for updates at startup" (off at first). Only what any web request sends
+is sent (your IP address and a User-Agent with the App's name and version); your inputs, profiles and
+device information are never sent. GitHub handles it under the
+<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.
+Nothing is downloaded or installed automatically.
+</p>
+<p>
 The help is a set of files installed with the App and opened in your browser without any
 network access. Only when you choose Privacy policy from the menu does your browser open this page.
 </p>
 
 <h3>5. Sharing with third parties</h3>
-<p>There is no information to share, so nothing is shared.</p>
+<p>There is no information to share, so nothing is shared (apart from the ordinary request data GitHub receives when you check for updates, see section 4).</p>
 
 <h3>6. Data retention and deletion</h3>
 <p>
@@ -199,7 +226,7 @@ is uninstalled.
 
 <h3>7. Security</h3>
 <p>
-Because the App transmits nothing, there is no exposure in transit. Protection of
+The App transmits none of your information. Update checks use HTTPS. Protection of
 files on your device relies on Windows permissions and your own management.
 </p>
 
